@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<!--
+  ============================================================
+  NestFindr - Verified Resale Homes
+  Landing page (single page, 6 sections with in-page navigation)
+  Course : ICT2215 Multimedia Web Design & Development
+  Student: Ma Yueyang (i24029401)
+  Built from the approved desktop & mobile wireframes.
+  ============================================================
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="NestFindr - a second-hand homes website. Browse verified resale listings with full property history, honest condition notes and neighbourhood information.">
+  <title>NestFindr | Verified Second-Hand Homes</title>
+  <!-- Link to the external stylesheet (colors, typography, responsive rules) -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Noto Sans: the typeface defined in the design system panel of the wireframe -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ========================================================
+       HEADER - sticky, 6 in-page anchor links (Assessment 1
+       improvement: simplified navigation, direct access)
+       ======================================================== -->
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="logo" href="#top" aria-label="NestFindr home">
+        <span class="logo-mark" aria-hidden="true">&#8962;</span>
+        <span class="logo-text">Nest<span class="logo-accent">Findr</span></span>
+      </a>
+
+      <!-- Desktop navigation: 6 clear, plain-language links -->
+      <nav class="main-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#listings">Listings</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#safety">Safety</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <a class="saved-link" href="#listings">Saved (0)</a>
+
+      <!-- Hamburger button: visible only below 900px (mobile wireframe) -->
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </button>
+    </div>
+
+    <!-- Mobile menu (opened by the hamburger, full-screen panel) -->
+    <nav class="mobile-nav" id="mobileMenu" aria-label="Mobile navigation">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#listings">Listings</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#safety">Safety</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#listings" class="mobile-saved">Saved (0)</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ========================================================
+         SECTION 01 - HOME
+         Hero + enlarged search panel placed directly under the
+         hero (Assessment 1 improvement: clear user guidance)
+         ======================================================== -->
+    <section class="hero" id="home">
+      <div class="container hero-inner">
+        <p class="eyebrow">Verified resale homes, honestly listed</p>
+        <h1>Know exactly what you are buying into.</h1>
+        <p class="hero-sub">Every NestFindr listing tells you what the previous owners left behind:
+          full renovation history, real condition notes and the true monthly cost.</p>
+
+        <!-- Enlarged search panel (wireframe item: the single biggest
+             interactive block on the page) -->
+        <form class="search-panel" action="#" method="get" aria-label="Property search">
+          <div class="search-field">
+            <label for="qLocation">Location</label>
+            <input type="text" id="qLocation" name="location" placeholder="City, district or postcode">
+          </div>
+          <div class="search-field">
+            <label for="qType">Property type</label>
+            <select id="qType" name="type">
+              <option>Any type</option>
+              <option>Terrace house</option>
+              <option>Semi-detached</option>
+              <option>Bungalow</option>
+              <option>Apartment / Condo</option>
+            </select>
+          </div>
+          <div class="search-field">
+            <label for="qPrice">Price range</label>
+            <select id="qPrice" name="price">
+              <option>Any price</option>
+              <option>Under RM 300,000</option>
+              <option>RM 300,000 - 600,000</option>
+              <option>RM 600,000 - 1,000,000</option>
+              <option>Above RM 1,000,000</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary search-btn">Search homes</button>
+        </form>
+
+        <!-- Three-step onboarding (Assessment 1 improvement:
+             onboarding guidance for first-time visitors) -->
+        <ol class="steps">
+          <li><strong>Search</strong> by location, type and budget</li>
+          <li><strong>Read</strong> the verified history of each home</li>
+          <li><strong>Visit</strong> with confidence - book a viewing</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SECTION 02 - LISTINGS
+         Card-style listings (Assessment 1 improvement:
+         card-based categories & clear visual hierarchy)
+         ======================================================== -->
+    <section class="section section-alt" id="listings">
+      <div class="container">
+        <p class="section-eyebrow">02 - Listings</p>
+        <h2 class="section-title">Featured resale homes</h2>
+        <p class="section-intro">Every card shows the age of the home and what was renovated,
+          so you can compare honestly before you visit.</p>
+
+        <div class="listing-grid">
+
+          <!-- Listing card 1 -->
+          <article class="listing-card">
+            <figure class="listing-photo">
+              <img src="image/p01.jpg" alt="Exterior of a two-storey terrace house with a tiled porch">
+              <span class="badge">Verified resale</span>
+            </figure>
+            <div class="listing-body">
+              <p class="listing-price">RM 485,000</p>
+              <h3 class="listing-title">Two-storey terrace, Taman Melawis</h3>
+              <ul class="listing-meta">
+                <li>3 bed</li><li>2 bath</li><li>1,540 sq ft</li><li>Built 2008</li>
+              </ul>
+              <p class="listing-note">Kitchen fully renovated 2022; roof re-tiled 2021. Original flooring in bedrooms.</p>
+              <a class="text-link" href="#contact">Enquire &rarr;</a>
+            </div>
+          </article>
+
+          <!-- Listing card 2 -->
+          <article class="listing-card">
+            <figure class="listing-photo">
+              <img src="image/p02.jpg" alt="Front view of a corner-lot house with a small garden">
+              <span class="badge">Verified resale</span>
+            </figure>
+            <div class="listing-body">
+              <p class="listing-price">RM 620,000</p>
+              <h3 class="listing-title">Corner-lot semi-D, Bandar Saujana</h3>
+              <ul class="listing-meta">
+                <li>4 bed</li><li>3 bath</li><li>2,100 sq ft</li><li>Built 2012</li>
+              </ul>
+              <p class="listing-note">Extra land on the side; new auto-gate 2023. Air-conditioners included.</p>
+              <a class="text-link" href="#contact">Enquire &rarr;</a>
+            </div>
+          </article>
+
+          <!-- Listing card 3 -->
+          <article class="listing-card">
+            <figure class="listing-photo">
+              <img src="image/p03.jpg" alt="Single-storey bungalow with a wide driveway">
+              <span class="badge">Verified resale</span>
+            </figure>
+            <div class="listing-body">
+              <p class="listing-price">RM 745,000</p>
+              <h3 class="listing-title">Single-storey bungalow, Taman Seri</h3>
+              <ul class="listing-meta">
+                <li>4 bed</li><li>2 bath</li><li>2,450 sq ft</li><li>Built 1999</li>
+              </ul>
+              <p class="listing-note">Large lot, quiet street. Wiring fully replaced 2020; well kept by one owner.</p>
+              <a class="text-link" href="#contact">Enquire &rarr;</a>
+            </div>
+          </article>
+
+          <!-- Listing card 4 -->
+          <article class="listing-card">
+            <figure class="listing-photo">
+              <img src="image/p04.jpg" alt="Modern townhouse facade with balcony railings">
+              <span class="badge">Verified resale</span>
+            </figure>
+            <div class="listing-body">
+              <p class="listing-price">RM 398,000</p>
+              <h3 class="listing-title">Three-storey townhouse, Puchong Gateway</h3>
+              <ul class="listing-meta">
+                <li>3 bed</li><li>3 bath</li><li>1,680 sq ft</li><li>Built 2015</li>
+              </ul>
+              <p class="listing-note">Walking distance to LRT. Kitchen cabinets and hood renewed 2023.</p>
+              <a class="text-link" href="#contact">Enquire &rarr;</a>
+            </div>
+          </article>
+
+          <!-- Listing card 5 -->
+          <article class="listing-card">
+            <figure class="listing-photo">
+              <img src="image/p05.jpg" alt="Condominium pool area surrounded by apartment blocks">
+              <span class="badge">Verified resale</span>
+            </figure>
+            <div class="listing-body">
+              <p class="listing-price">RM 350,000</p>
+              <h3 class="listing-title">Condominium, Lakeside Residences</h3>
+              <ul class="listing-meta">
+                <li>3 bed</li><li>2 bath</li><li>1,050 sq ft</li><li>Built 2016</li>
+              </ul>
+              <p class="listing-note">Pool, gym and 24-hour guard. One owner since new; move-in condition.</p>
+              <a class="text-link" href="#contact">Enquire &rarr;</a>
+            </div>
+          </article>
+
+          <!-- Listing card 6 -->
+          <article class="listing-card">
+            <figure class="listing-photo">
+              <img src="image/p06.jpg" alt="Bedroom interior with wooden floor and large window">
+              <span class="badge">Verified resale</span>
+            </figure>
+            <div class="listing-body">
+              <p class="listing-price">RM 512,000</p>
+              <h3 class="listing-title">Renovated link house, Kota Kemuning</h3>
+              <ul class="listing-meta">
+                <li>4 bed</li><li>3 bath</li><li>1,820 sq ft</li><li>Built 2010</li>
+              </ul>
+              <p class="listing-note">Full interior refurbishment 2024, including bedrooms shown - genuinely move-in ready.</p>
+              <a class="text-link" href="#contact">Enquire &rarr;</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SECTION 03 - SERVICES
+         Six original icons (icon01-06.png), each with a one-line
+         plain-language explanation
+         ======================================================== -->
+    <section class="section" id="services">
+      <div class="container">
+        <p class="section-eyebrow">03 - Services</p>
+        <h2 class="section-title">Everything you need, in one place</h2>
+        <p class="section-intro">Six free services for every buyer and seller on NestFindr.</p>
+
+        <div class="service-grid">
+          <div class="service-card">
+            <img src="image/icon01.png" alt="Magnifier over a house: property search icon">
+            <h3>Property Search</h3>
+            <p>Filter verified resale homes by location, type, budget and age of the property.</p>
+          </div>
+          <div class="service-card">
+            <img src="image/icon02.png" alt="Document with house details icon">
+            <h3>House Details</h3>
+            <p>Full ownership and renovation history for every listing - what changed, and when.</p>
+          </div>
+          <div class="service-card">
+            <img src="image/icon03.png" alt="Map pin with houses: neighbourhood info icon">
+            <h3>Neighbourhood Info</h3>
+            <p>Schools, clinics, markets and commute times mapped around each home.</p>
+          </div>
+          <div class="service-card">
+            <img src="image/icon04.png" alt="Person with headset: agent support icon">
+            <h3>Real-Estate Agent</h3>
+            <p>Talk to a verified agent who answers in plain language, not sales talk.</p>
+          </div>
+          <div class="service-card">
+            <img src="image/icon05.png" alt="Heart on a listing card: saved listings icon">
+            <h3>Saved Listings</h3>
+            <p>Shortlist homes and compare their renovation records side by side.</p>
+          </div>
+          <div class="service-card">
+            <img src="image/icon06.png" alt="Calculator with house: mortgage calculator icon">
+            <h3>Mortgage Calc</h3>
+            <p>Estimate the real monthly cost, including fees, before you commit.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SECTION 04 - ABOUT
+         Project story + embedded video (multimedia requirement:
+         one playable video inside the page)
+         ======================================================== -->
+    <section class="section section-alt" id="about">
+      <div class="container about-inner">
+        <div class="about-text">
+          <p class="section-eyebrow">04 - About</p>
+          <h2 class="section-title">Why NestFindr exists</h2>
+          <p>Buying a second-hand home means buying somebody else's decisions. A fresh coat
+            of paint can hide a leaking roof; a "renovated" kitchen may hide old wiring.</p>
+          <p>NestFindr was built to change that. Every listing on this site carries a
+            <strong>verified history</strong>: the year it was built, what was renovated and when,
+            what still works, and what will need attention. No surprises - that is our promise.</p>
+          <p>The 60-second video below explains how a NestFindr listing is verified before
+            it ever reaches your search results.</p>
+          <a class="btn btn-ghost" href="#contact">Talk to our team</a>
+        </div>
+        <figure class="about-video">
+          <!-- Embedded video: plays inside the page (assessment requirement) -->
+          <video controls preload="metadata" poster="image/p01.jpg">
+            <source src="video_ad/Landmark-Homes-Advertisement.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <figcaption>How a NestFindr home gets verified (60 s)</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SECTION 05 - SAFETY
+         Dedicated safety panel (Assessment 1 improvement:
+         safety information made prominent, not buried)
+         ======================================================== -->
+    <section class="section safety" id="safety">
+      <div class="container">
+        <p class="section-eyebrow">05 - Safety</p>
+        <h2 class="section-title">Six rules before you pay a single sen</h2>
+        <p class="section-intro">Second-hand deals attract scammers. Follow these rules on
+          NestFindr - and anywhere else.</p>
+
+        <ul class="safety-grid">
+          <li><strong>1. Never pay before viewing.</strong> No agent on NestFindr may ask for a deposit before a physical viewing.</li>
+          <li><strong>2. Verify the title.</strong> Ask for the land title and check the owner's name matches the seller's ID.</li>
+          <li><strong>3. Use our in-platform chat.</strong> Keep conversations on NestFindr until the viewing is booked.</li>
+          <li><strong>4. Check the renovation record.</strong> Major works need council approval - ask for the permits.</li>
+          <li><strong>5. Bring a second opinion.</strong> Hire an independent inspector before signing anything.</li>
+          <li><strong>6. Report suspicious listings.</strong> One click on "Report" - we review within 24 hours.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SECTION 06 - CONTACT
+         Display-only contact form (per assessment brief: no data
+         submission - JavaScript shows a confirmation message)
+         ======================================================== -->
+    <section class="section section-alt" id="contact">
+      <div class="container contact-inner">
+        <div class="contact-info">
+          <p class="section-eyebrow">06 - Contact</p>
+          <h2 class="section-title">Ask us anything</h2>
+          <p>Questions about a listing, the verification process, or selling your own home?
+            Send us a message - we reply within one working day.</p>
+          <ul class="contact-details">
+            <li><strong>Email:</strong> hello@nestfindr.com</li>
+            <li><strong>Phone:</strong> +60 3-2100 8888</li>
+            <li><strong>Office:</strong> Level 12, Menara NestFindr, Kuala Lumpur</li>
+            <li><strong>Hours:</strong> Mon - Sat, 9:00 - 18:00</li>
+          </ul>
+        </div>
+
+        <!-- Simple HTML form, display only -->
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="form-row">
+            <label for="cfName">Full name</label>
+            <input type="text" id="cfName" name="name" placeholder="e.g. Aisyah Rahman" required>
+          </div>
+          <div class="form-row">
+            <label for="cfEmail">Email</label>
+            <input type="email" id="cfEmail" name="email" placeholder="you@example.com" required>
+          </div>
+          <div class="form-row">
+            <label for="cfPhone">Phone (optional)</label>
+            <input type="tel" id="cfPhone" name="phone" placeholder="+60 12-345 6789">
+          </div>
+          <div class="form-row">
+            <label for="cfMsg">Your message</label>
+            <textarea id="cfMsg" name="message" rows="5" placeholder="Which home are you asking about?" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Send message</button>
+          <!-- Confirmation appears here after submit (display only) -->
+          <p class="form-note" id="formNote" role="status"></p>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================================
+       FOOTER - site credit, nestfindr.com, quick anchors
+       ======================================================== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="logo-text">Nest<span class="logo-accent">Findr</span></span>
+        <p>Verified resale homes, honestly listed.</p>
+        <p class="footer-url">www.nestfindr.com</p>
+      </div>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#listings">Listings</a></li>
+          <li><a href="#services">Services</a></li>
+        </ul>
+      </nav>
+      <nav class="footer-nav" aria-label="Footer company links">
+        <h3>Company</h3>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#safety">Safety</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="footer-legal">
+        <h3>Trust</h3>
+        <p>Every listing verified before publication.<br>&copy; 2026 NestFindr. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Link to the external JavaScript (mobile menu + form feedback) -->
+  <script src="js/main.js"></script>
+</body>
+</html>
